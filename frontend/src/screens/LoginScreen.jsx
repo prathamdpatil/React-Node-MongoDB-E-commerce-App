@@ -25,7 +25,7 @@ import Loader from "../components/Loader";
 
   useEffect(() => {
     if (userInfo) {
-      navigate('/');
+      navigate('/ProductDetails');
     }
   }, [navigate, userInfo]);
 

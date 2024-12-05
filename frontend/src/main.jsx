@@ -11,8 +11,10 @@ import LoginScreen from './screens/LoginScreen.jsx';
 import RegisterScreen from './screens/RegisterScreen.jsx';
 import ProfileScreen from './screens/ProfileScreen.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
-
-
+import ProductDetails from './screens/ProductDetails.jsx';
+import ProductGrid from './screens/ProductGrid.jsx';
+import ProductAddCart from './screens/ProductAddCart.jsx';
+import ProductAddWishlist from './screens/ProductAddWishlist.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,9 +24,12 @@ const router = createBrowserRouter(
          <Route path='/register' element={<RegisterScreen/>}/>
          <Route path='' element={<PrivateRoute />}>
          <Route path='/profile' element={<ProfileScreen />} />
+         <Route path='/ProductDetails' element={<ProductDetails />} />
+         <Route path="/product/:id" element={<ProductGrid/>}/>
+         <Route path="/cart" element={<ProductAddCart/>}/>
+         <Route path="/wishlist" element={<ProductAddWishlist/>}/>
          </Route>
-
-    </Route>
+    </Route> 
   )
 )
 
@@ -34,7 +39,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
       <RouterProvider router={router}/>
   </StrictMode>
-</Provider>
+  </Provider>
 
 )
 
